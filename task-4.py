@@ -60,3 +60,40 @@ class Circle:
 NewCircle = Circle(7)
 print(NewCircle.area())
 print(NewCircle.perimeter())
+#
+# question no-4
+class TV:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+        self.is_on = False
+
+
+class TV:
+    def __init__(self, brand):
+        self.brand = brand
+        self.channel = 1
+        self.volume = 50
+        self.is_on = False
+
+    def increase_volume(self):
+        self.volume = min(self.volume + 1, 100)
+
+    def decrease_volume(self):
+        self.volume = max(self.volume - 1, 0)
+
+    def set_channel(self, channel):
+        if 1 <= channel <= 50:
+            self.channel = channel
+
+    def reset_tv(self):
+        self.channel = 1
+        self.volume = 50
+
+    def status(self):
+        return f"{self.brand} at channel {self.channel}, volume {self.volume}"
+
+my_tv = TV(brand="Panasonic")
+my_tv.increase_volume()
+my_tv.set_channel(8)
+print(my_tv.status())
